@@ -7,9 +7,24 @@
 //
 
 #include <iostream>
-
+using namespace std;
+void reference(int *a, int *b)
+{
+    int temporary = *a;
+    *a = *b;
+    *b = temporary;
+}
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    
+    int a,b;
+    
+    cout<<"Enter two numbers :"<<endl;
+    cin>>a>>b;
+    
+    reference(&a,&b);
+    
+    cout<<"External adres selector of "<<a<<" "<<&a<<endl;
+    cout<<"External adres selector of "<<b<<" "<<&b<<endl;
+    
     return 0;
 }
